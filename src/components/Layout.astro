@@ -1,0 +1,49 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = 'Jimmy - New IA Engineer', 
+  description = 'Portfolio de Jimmy, spécialisé en MLOps et Intelligence Artificielle. Découvrez mes projets et compétences.'
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (on ajoutera plus tard) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <Header />
+    
+    <main class="main-content">
+      <slot />
+    </main>
+    
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .main-content {
+    min-height: 100vh;
+    padding-top: 80px; /* Espace pour le header fixe */
+  }
+</style>

@@ -1,0 +1,232 @@
+---
+import Layout from '../components/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout title="Jimmy - New IA Engineer | Portfolio">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tag">👋 Bienvenue sur mon portfolio</span>
+        <h1>Jimmy</h1>
+        <p class="hero-subtitle">New IA Engineer</p>
+        <p class="hero-description">
+          Spécialisé en MLOps et Intelligence Artificielle. 
+          Passionné par le déploiement et la maintenance de modèles ML en production.
+        </p>
+        
+        <div class="hero-cta">
+          <a href="#projets" class="btn-primary">Voir mes projets</a>
+          <a href="#contact" class="btn-secondary">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projets Section -->
+  <section id="projets" class="section">
+    <div class="container">
+      <h2 class="section-title">Mes Projets</h2>
+      <p class="section-subtitle">Découvrez mes réalisations en MLOps et Data Science</p>
+      
+      <div class="projects-grid">
+        <ProjectCard
+          title="RecoFilm"
+          description="Système de recommandation de films avec MLOps complet : MLflow, Docker, CI/CD, monitoring avec Prometheus et Grafana."
+          technologies={['Python', 'MLflow', 'Docker', 'FastAPI', 'PostgreSQL', 'Grafana']}
+          link="/projets/recofilm"
+        />
+        
+        <ProjectCard
+          title="Projet 2"
+          description="Description de ton deuxième projet de la formation DataScientest."
+          technologies={['Python', 'Machine Learning', 'API']}
+        />
+        
+        <ProjectCard
+          title="Projet 3"
+          description="Description d'un autre projet que tu as réalisé."
+          technologies={['Python', 'Data Analysis', 'Visualization']}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">20M+</span>
+          <span class="stat-label">Ratings analysés</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">27K+</span>
+          <span class="stat-label">Films dans la base</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">MLOps Pipeline</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Sprints complétés</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .hero-tag {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--color-accent-primary);
+    border-radius: 50px;
+    color: var(--color-accent-secondary);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+    line-height: 1.8;
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    color: white;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid var(--color-accent-primary);
+    color: var(--color-accent-primary);
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  /* Section Styles */
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+  
+  /* Stats Section */
+  .stats-section {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-secondary);
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+  }
+  
+  .stat-card {
+    text-align: center;
+    padding: var(--space-lg);
+  }
+  
+  .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .stat-label {
+    display: block;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+</style>
