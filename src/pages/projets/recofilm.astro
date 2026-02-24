@@ -388,7 +388,7 @@ import Layout from '../../components/Layout.astro';
     </div>
   </section>
 
-  <!-- Screenshots Section -->
+<!-- Screenshots Section -->
   <section class="section screenshots-section">
     <div class="container">
       <h2 class="section-title">Captures d'écran</h2>
@@ -396,11 +396,24 @@ import Layout from '../../components/Layout.astro';
       
       <div class="screenshots-grid">
         <div class="screenshot-card">
-          <div class="screenshot-placeholder">
-            <span class="placeholder-icon">📊</span>
-            <span class="placeholder-text">Dashboard Grafana</span>
+          <div class="screenshot-image">
+            <img src="/recofilm/grafana_dashboard.png" alt="Dashboard Grafana - Monitoring RecoFilm" />
           </div>
-          <p class="screenshot-caption">Monitoring temps réel des métriques API</p>
+          <p class="screenshot-caption">Dashboard Grafana - Monitoring temps réel des métriques API</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-image">
+            <img src="/recofilm/evidently_drift.png" alt="Rapport Evidently - Drift Detection" />
+          </div>
+          <p class="screenshot-caption">Rapport Evidently - Détection de drift et analyse des données</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-image">
+            <img src="/recofilm/swagger_ui.png" alt="Swagger UI - API RecoFilm" />
+          </div>
+          <p class="screenshot-caption">Swagger UI - Documentation interactive de l'API FastAPI</p>
         </div>
 
         <div class="screenshot-card">
@@ -408,27 +421,9 @@ import Layout from '../../components/Layout.astro';
             <span class="placeholder-icon">🧪</span>
             <span class="placeholder-text">Interface MLflow</span>
           </div>
-          <p class="screenshot-caption">Tracking des expériences et model registry</p>
-        </div>
-
-        <div class="screenshot-card">
-          <div class="screenshot-placeholder">
-            <span class="placeholder-icon">🔍</span>
-            <span class="placeholder-text">Rapport Evidently</span>
-          </div>
-          <p class="screenshot-caption">Détection de drift et analyse des données</p>
-        </div>
-
-        <div class="screenshot-card">
-          <div class="screenshot-placeholder">
-            <span class="placeholder-icon">⚡</span>
-            <span class="placeholder-text">Swagger API</span>
-          </div>
-          <p class="screenshot-caption">Documentation interactive de l'API</p>
+          <p class="screenshot-caption">Interface MLflow - À venir</p>
         </div>
       </div>
-      
-      <p class="screenshots-note">Screenshots à venir - Upload en cours</p>
     </div>
   </section>
 
@@ -944,6 +939,25 @@ import Layout from '../../components/Layout.astro';
     border-radius: var(--radius-lg);
     padding: var(--space-md);
     backdrop-filter: blur(10px);
+  }
+
+  .screenshot-image {
+    height: 250px;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+  }
+
+  .screenshot-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .screenshot-card:hover .screenshot-image img {
+    transform: scale(1.05);
   }
 
   .screenshot-placeholder {
