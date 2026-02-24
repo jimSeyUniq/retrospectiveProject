@@ -1,5 +1,6 @@
 ---
 // Header avec navigation
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="header">
@@ -11,14 +12,14 @@
       </a>
       
       <ul class="nav-links">
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/projets">Projets</a></li>
-        <li><a href="/competences">Compétences</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/" class:list={[{ active: currentPath === '/' }]}>Accueil</a></li>
+        <li><a href="/projets" class:list={[{ active: currentPath === '/projets' }]}>Projets</a></li>
+        <li><a href="/competences" class:list={[{ active: currentPath === '/competences' }]}>Compétences</a></li>
+        <li><a href="/contact" class:list={[{ active: currentPath === '/contact' }]}>Contact</a></li>
       </ul>
       
       <div class="nav-cta">
-        <a href="#contact" class="btn-primary">Me contacter</a>
+        <a href="/contact" class="btn-primary">Me contacter</a>
       </div>
     </nav>
   </div>
@@ -96,11 +97,13 @@
     transition: width var(--transition-fast);
   }
   
-  .nav-links a:hover {
+  .nav-links a:hover,
+  .nav-links a.active {
     color: var(--color-text-primary);
   }
   
-  .nav-links a:hover::after {
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
     width: 100%;
   }
   
