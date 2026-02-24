@@ -1,0 +1,1100 @@
+---
+import Layout from '../../components/Layout.astro';
+---
+
+<Layout 
+  title="RecoFilm - Système de Recommandation MLOps | Jimmy" 
+  description="Projet MLOps complet : système de recommandation de films avec FastAPI, MLflow, Docker, Prometheus, Grafana et détection de drift automatique."
+>
+  <!-- Hero Section -->
+  <section class="project-hero">
+    <div class="container">
+      <a href="/" class="back-link">← Retour à l'accueil</a>
+      
+      <div class="hero-content">
+        <h1>RecoFilm</h1>
+        <p class="hero-subtitle">Système de Recommandation de Films avec Pipeline MLOps Complet</p>
+        
+        <div class="hero-badges">
+          <span class="badge">MLOps</span>
+          <span class="badge">Production Ready</span>
+          <span class="badge">Auto-Retraining</span>
+        </div>
+        
+        <div class="hero-links">
+          <a href="https://github.com/jimSeyUniq/mlops-recofilm" target="_blank" class="btn-primary">
+            <span>Voir sur GitHub</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="section">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-main">
+          <h2>Vue d'ensemble</h2>
+          <p>RecoFilm est un système de recommandation de films complet implémentant les meilleures pratiques MLOps pour un déploiement en production.</p>
+          
+          <p>Le projet couvre l'ensemble du cycle de vie MLOps : de l'entraînement du modèle à son déploiement, en passant par le monitoring, la détection de drift et le réentraînement automatique.</p>
+          
+          <h3>Objectifs du projet</h3>
+          <ul class="objectives-list">
+            <li>Développer une API REST performante pour les recommandations en temps réel</li>
+            <li>Implémenter un pipeline MLOps complet et automatisé</li>
+            <li>Assurer le monitoring et la détection de data drift</li>
+            <li>Garantir la qualité et la maintenabilité du code</li>
+            <li>Automatiser le déploiement via CI/CD</li>
+          </ul>
+        </div>
+        
+        <div class="overview-stats">
+          <div class="stat-box">
+            <span class="stat-value">20M+</span>
+            <span class="stat-label">Ratings analysés</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value">27K+</span>
+            <span class="stat-label">Films</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value">5</span>
+            <span class="stat-label">Sprints MLOps</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Containerisé</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Section -->
+  <section class="section architecture-section">
+    <div class="container">
+      <h2 class="section-title">Architecture MLOps</h2>
+      
+      <div class="architecture-diagram">
+        <div class="arch-layer">
+          <h3>Couche Utilisateur</h3>
+          <div class="arch-component user">
+            <span class="component-icon">👤</span>
+            <span>Utilisateur</span>
+          </div>
+        </div>
+        
+        <div class="arch-arrow">↓</div>
+        
+        <div class="arch-layer">
+          <h3>Couche API</h3>
+          <div class="arch-component api">
+            <span class="component-icon">⚡</span>
+            <span>FastAPI</span>
+            <small>Port 8000</small>
+          </div>
+        </div>
+        
+        <div class="arch-arrow">↓</div>
+        
+        <div class="arch-layer">
+          <h3>Couche Données & ML</h3>
+          <div class="arch-row">
+            <div class="arch-component database">
+              <span class="component-icon">🗄️</span>
+              <span>PostgreSQL</span>
+              <small>Supabase</small>
+            </div>
+            <div class="arch-component mlops">
+              <span class="component-icon">🧪</span>
+              <span>MLflow</span>
+              <small>Port 5000</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="arch-arrow">↓</div>
+        
+        <div class="arch-layer">
+          <h3>Couche Monitoring</h3>
+          <div class="arch-row">
+            <div class="arch-component monitoring">
+              <span class="component-icon">📊</span>
+              <span>Prometheus</span>
+              <small>Port 9090</small>
+            </div>
+            <div class="arch-component dashboard">
+              <span class="component-icon">📈</span>
+              <span>Grafana</span>
+              <small>Port 3000</small>
+            </div>
+            <div class="arch-component drift">
+              <span class="component-icon">🔍</span>
+              <span>Evidently</span>
+              <small>Drift Detection</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="workflow-description">
+        <h3>Workflow MLOps</h3>
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <span class="step-number">1</span>
+            <div class="step-content">
+              <h4>Données & Preprocessing</h4>
+              <p>Ingestion MovieLens 20M, nettoyage et preprocessing des données</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <span class="step-number">2</span>
+            <div class="step-content">
+              <h4>Training & Evaluation</h4>
+              <p>Entraînement KNN, tracking MLflow, évaluation des performances</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <span class="step-number">3</span>
+            <div class="step-content">
+              <h4>Model Registry</h4>
+              <p>Versioning des modèles, promotion Champion/Challenger</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <span class="step-number">4</span>
+            <div class="step-content">
+              <h4>Deployment</h4>
+              <p>API FastAPI containerisée avec Docker</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <span class="step-number">5</span>
+            <div class="step-content">
+              <h4>Monitoring</h4>
+              <p>Prometheus, Grafana, métriques temps réel</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <span class="step-number">6</span>
+            <div class="step-content">
+              <h4>Drift Detection</h4>
+              <p>Evidently pour détecter les dérives de données</p>
+            </div>
+          </div>
+          <div class="workflow-step">
+            <span class="step-number">7</span>
+            <div class="step-content">
+              <h4>Auto-Retraining</h4>
+              <p>Réentraînement automatique si drift détecté</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sprints Section -->
+  <section class="section sprints-section">
+    <div class="container">
+      <h2 class="section-title">Les 5 Sprints MLOps</h2>
+      
+      <div class="sprints-timeline">
+        <div class="sprint-card">
+          <div class="sprint-header">
+            <span class="sprint-number">Sprint 1</span>
+            <h3>Setup Environnement</h3>
+          </div>
+          <div class="sprint-content">
+            <p>Configuration de l'infrastructure de base et initialisation du projet.</p>
+            <ul>
+              <li>Configuration PostgreSQL sur Supabase</li>
+              <li>Structure du projet et organisation des dossiers</li>
+              <li>Chargement et exploration du dataset MovieLens 20M</li>
+              <li>Mise en place de Git et GitHub</li>
+            </ul>
+            <div class="sprint-tech">
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Supabase</span>
+              <span class="tech-tag">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sprint-card">
+          <div class="sprint-header">
+            <span class="sprint-number">Sprint 2</span>
+            <h3>MLflow - Experiment Tracking</h3>
+          </div>
+          <div class="sprint-content">
+            <p>Mise en place du tracking des expériences et du registry de modèles.</p>
+            <ul>
+              <li>Configuration MLflow Server</li>
+              <li>Tracking des expérimentations (métriques, paramètres)</li>
+              <li>Model Registry avec versioning</li>
+              <li>Système Champion/Challenger pour promotion de modèles</li>
+              <li>Entraînement du modèle KNN collaboratif</li>
+            </ul>
+            <div class="sprint-tech">
+              <span class="tech-tag">MLflow</span>
+              <span class="tech-tag">scikit-learn</span>
+              <span class="tech-tag">KNN</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sprint-card">
+          <div class="sprint-header">
+            <span class="sprint-number">Sprint 3</span>
+            <h3>Orchestration Docker</h3>
+          </div>
+          <div class="sprint-content">
+            <p>Containerisation et orchestration des services.</p>
+            <ul>
+              <li>Développement de l'API FastAPI</li>
+              <li>Endpoints : /predict, /training, /health</li>
+              <li>Création des Dockerfiles (API, MLflow)</li>
+              <li>Docker Compose pour orchestration multi-services</li>
+              <li>Gestion du networking et des volumes</li>
+            </ul>
+            <div class="sprint-tech">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Docker Compose</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sprint-card">
+          <div class="sprint-header">
+            <span class="sprint-number">Sprint 4</span>
+            <h3>Monitoring & Drift Detection</h3>
+          </div>
+          <div class="sprint-content">
+            <p>Surveillance des performances et détection des anomalies.</p>
+            <ul>
+              <li>Configuration Prometheus pour collecte de métriques</li>
+              <li>Dashboards Grafana pour visualisation temps réel</li>
+              <li>Implémentation Evidently pour drift detection</li>
+              <li>Système de seuils et alertes (30% de drift)</li>
+              <li>Logs et rapports de monitoring</li>
+            </ul>
+            <div class="sprint-tech">
+              <span class="tech-tag">Prometheus</span>
+              <span class="tech-tag">Grafana</span>
+              <span class="tech-tag">Evidently</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sprint-card">
+          <div class="sprint-header">
+            <span class="sprint-number">Sprint 5</span>
+            <h3>Automatisation & CI/CD</h3>
+          </div>
+          <div class="sprint-content">
+            <p>Automatisation du pipeline et déploiement continu.</p>
+            <ul>
+              <li>Réentraînement automatique avec APScheduler</li>
+              <li>CI/CD avec GitHub Actions</li>
+              <li>Tests automatisés (pytest)</li>
+              <li>Application Streamlit de présentation</li>
+              <li>Documentation complète du projet</li>
+            </ul>
+            <div class="sprint-tech">
+              <span class="tech-tag">APScheduler</span>
+              <span class="tech-tag">GitHub Actions</span>
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">pytest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="section tech-section">
+    <div class="container">
+      <h2 class="section-title">Stack Technique</h2>
+      
+      <div class="tech-grid">
+        <div class="tech-category">
+          <h3>Backend & API</h3>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">Python 3.13</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">FastAPI</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">PostgreSQL (Supabase)</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">scikit-learn (KNN)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3>MLOps</h3>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">MLflow</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Evidently</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">APScheduler</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3>Monitoring</h3>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">Prometheus</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Grafana</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3>DevOps</h3>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">Docker</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Docker Compose</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">GitHub Actions</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">pytest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section class="section screenshots-section">
+    <div class="container">
+      <h2 class="section-title">Captures d'écran</h2>
+      <p class="section-subtitle">Aperçu des différents composants du système</p>
+      
+      <div class="screenshots-grid">
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <span class="placeholder-icon">📊</span>
+            <span class="placeholder-text">Dashboard Grafana</span>
+          </div>
+          <p class="screenshot-caption">Monitoring temps réel des métriques API</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <span class="placeholder-icon">🧪</span>
+            <span class="placeholder-text">Interface MLflow</span>
+          </div>
+          <p class="screenshot-caption">Tracking des expériences et model registry</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <span class="placeholder-icon">🔍</span>
+            <span class="placeholder-text">Rapport Evidently</span>
+          </div>
+          <p class="screenshot-caption">Détection de drift et analyse des données</p>
+        </div>
+
+        <div class="screenshot-card">
+          <div class="screenshot-placeholder">
+            <span class="placeholder-icon">⚡</span>
+            <span class="placeholder-text">Swagger API</span>
+          </div>
+          <p class="screenshot-caption">Documentation interactive de l'API</p>
+        </div>
+      </div>
+      
+      <p class="screenshots-note">Screenshots à venir - Upload en cours</p>
+    </div>
+  </section>
+
+  <!-- Résultats Section -->
+  <section class="section results-section">
+    <div class="container">
+      <h2 class="section-title">Résultats & Apprentissages</h2>
+      
+      <div class="results-grid">
+        <div class="result-card">
+          <h3>Pipeline MLOps Complet</h3>
+          <p>Mise en place d'un pipeline end-to-end couvrant l'ensemble du cycle de vie ML, du développement au monitoring en production.</p>
+        </div>
+
+        <div class="result-card">
+          <h3>Automatisation</h3>
+          <p>Réentraînement automatique déclenché par la détection de drift, garantissant la fraîcheur et la pertinence du modèle.</p>
+        </div>
+
+        <div class="result-card">
+          <h3>Monitoring Avancé</h3>
+          <p>Dashboards Grafana pour suivre les performances en temps réel : requêtes, latence, taux d'erreur.</p>
+        </div>
+
+        <div class="result-card">
+          <h3>Production Ready</h3>
+          <p>Architecture containerisée avec Docker, tests automatisés et CI/CD pour un déploiement fiable.</p>
+        </div>
+      </div>
+
+      <div class="key-learnings">
+        <h3>Compétences Acquises</h3>
+        <ul>
+          <li>Architecture et orchestration de services avec Docker Compose</li>
+          <li>Tracking d'expériences et versioning de modèles avec MLflow</li>
+          <li>Développement d'API REST performantes avec FastAPI</li>
+          <li>Mise en place de monitoring avec Prometheus et Grafana</li>
+          <li>Détection de data drift avec Evidently</li>
+          <li>Automatisation du réentraînement de modèles</li>
+          <li>CI/CD avec GitHub Actions</li>
+          <li>Gestion de bases de données PostgreSQL en production</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <h2>Intéressé par ce projet ?</h2>
+        <p>Explorez le code source complet sur GitHub ou contactez-moi pour en discuter.</p>
+        <div class="cta-buttons">
+          <a href="https://github.com/jimSeyUniq/mlops-recofilm" target="_blank" class="btn-primary">
+            Voir le code sur GitHub
+          </a>
+          <a href="/contact" class="btn-secondary">
+            Me contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Project Hero */
+  .project-hero {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover {
+    color: var(--color-accent-primary);
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-xl);
+  }
+
+  .badge {
+    padding: 0.5rem 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--color-accent-primary);
+    border-radius: 50px;
+    color: var(--color-accent-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    color: white;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid var(--color-accent-primary);
+    color: var(--color-accent-primary);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(59, 130, 246, 0.1);
+  }
+
+  /* Section */
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Overview */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .overview-main h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .overview-main h3 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    color: var(--color-accent-primary);
+  }
+
+  .overview-main p {
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+  }
+
+  .objectives-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .objectives-list li {
+    padding-left: 1.5rem;
+    margin-bottom: var(--space-sm);
+    position: relative;
+  }
+
+  .objectives-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+  }
+
+  .overview-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .stat-box {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-xs);
+  }
+
+  .stat-label {
+    display: block;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
+
+  /* Architecture */
+  .architecture-section {
+    background: var(--color-bg-secondary);
+  }
+
+  .architecture-diagram {
+    max-width: 800px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .arch-layer {
+    margin-bottom: var(--space-lg);
+  }
+
+  .arch-layer h3 {
+    text-align: center;
+    color: var(--color-accent-primary);
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .arch-component {
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-normal);
+  }
+
+  .arch-component:hover {
+    border-color: var(--color-accent-primary);
+    transform: translateY(-2px);
+  }
+
+  .arch-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .component-icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .arch-component span:not(.component-icon) {
+    display: block;
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .arch-component small {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-top: var(--space-xs);
+  }
+
+  .arch-arrow {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-accent-primary);
+    margin: var(--space-sm) 0;
+  }
+
+  /* Workflow */
+  .workflow-description {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--space-xl);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+  }
+
+  .workflow-description h3 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .workflow-steps {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .workflow-step {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+  }
+
+  .step-content h4 {
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .step-content p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+  }
+
+  /* Sprints */
+  .sprints-section {
+    background: var(--color-bg-primary);
+  }
+
+  .sprints-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--space-lg);
+  }
+
+  .sprint-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-normal);
+  }
+
+  .sprint-card:hover {
+    border-color: var(--color-accent-primary);
+    transform: translateX(4px);
+  }
+
+  .sprint-header {
+    margin-bottom: var(--space-md);
+  }
+
+  .sprint-number {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--color-accent-primary);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .sprint-header h3 {
+    color: var(--color-text-primary);
+    font-size: 1.5rem;
+  }
+
+  .sprint-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .sprint-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--space-md);
+  }
+
+  .sprint-content li {
+    padding-left: 1.5rem;
+    margin-bottom: var(--space-xs);
+    position: relative;
+    color: var(--color-text-secondary);
+  }
+
+  .sprint-content li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-primary);
+  }
+
+  .sprint-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .tech-tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--color-accent-primary);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent-secondary);
+    font-size: 0.85rem;
+  }
+
+  /* Technologies */
+  .tech-section {
+    background: var(--color-bg-secondary);
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .tech-category {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    backdrop-filter: blur(10px);
+  }
+
+  .tech-category h3 {
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .tech-item {
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(59, 130, 246, 0.05);
+    border-left: 3px solid var(--color-accent-primary);
+    border-radius: var(--radius-sm);
+  }
+
+  .tech-name {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+  }
+
+  /* Screenshots */
+  .screenshots-section {
+    background: var(--color-bg-primary);
+  }
+
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .screenshot-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    backdrop-filter: blur(10px);
+  }
+
+  .screenshot-placeholder {
+    height: 200px;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .placeholder-icon {
+    font-size: 3rem;
+  }
+
+  .placeholder-text {
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .screenshot-caption {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .screenshots-note {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* Results */
+  .results-section {
+    background: var(--color-bg-secondary);
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .result-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    backdrop-filter: blur(10px);
+  }
+
+  .result-card h3 {
+    color: var(--color-accent-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .result-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .key-learnings {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    backdrop-filter: blur(10px);
+  }
+
+  .key-learnings h3 {
+    margin-bottom: var(--space-lg);
+    text-align: center;
+  }
+
+  .key-learnings ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .key-learnings li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-text-secondary);
+  }
+
+  .key-learnings li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--color-bg-primary);
+  }
+
+  .cta-card {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    backdrop-filter: blur(10px);
+  }
+
+  .cta-card h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-card p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .overview-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .arch-row {
+      grid-template-columns: 1fr;
+    }
+
+    .key-learnings ul {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
